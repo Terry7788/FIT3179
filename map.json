@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {"text": "Olympic Medal Count by Country in 2018 by FIT3179 Terry Truong", "fontSize": 18, "anchor": "middle", "offset": 10},
+    "title": {"text": "Winter Olympic Medal Count by Country in 2018 by FIT3179 Terry Truong", "fontSize": 18, "anchor": "middle", "offset": 10},
     "width": 1000,
     "height": 550,
     "autosize": {"type": "fit", "contains": "content"},
