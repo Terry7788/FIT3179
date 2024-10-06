@@ -1,0 +1,52 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Number of Participating Countries in the Summer Olympics (1896-2021)",
+    "title": {
+      "text": "Participating Countries in Summer Olympics (1896-2021)",
+      "anchor": "start",
+      "fontSize": 16
+    },
+    "data": {
+      "url": "https://raw.githubusercontent.com/Terry7788/FIT3179/refs/heads/main/cleaned_olympics_participation.csv",
+      "format": {"type": "csv"}
+    },
+    "mark": "bar",
+    "encoding": {
+      "y": {
+        "field": "Year", 
+        "type": "ordinal", 
+        "sort": "descending", 
+        "axis": {"labelAngle": 0}
+      },
+      "x": {
+        "field": "Participants", 
+        "type": "quantitative",
+        "title": "Number of Participating Countries"
+      },
+      "tooltip": [
+        {"field": "Year", "type": "ordinal", "title": "Year"},
+        {"field": "Participants", "type": "quantitative", "title": "Participants"}
+      ]
+    },
+    "params": [
+      {
+        "name": "Year_selection",
+        "bind": {
+          "input": "select",
+          "options": [
+            null, "1896-1920", "1924-1948", "1952-1976", "1980-2004", "2008-2021"
+          ],
+          "labels": [
+            "Show All", "1896-1920", "1924-1948", "1952-1976", "1980-2004", "2008-2021"
+          ],
+          "name": "Year Range Selection: "
+        }
+      }
+    ],
+    "transform": [
+      {
+        "filter": "Year_selection == null || (Year_selection == '1896-1920' && datum.Year >= 1896 && datum.Year <= 1920) || (Year_selection == '1924-1948' && datum.Year >= 1924 && datum.Year <= 1948) || (Year_selection == '1952-1976' && datum.Year >= 1952 && datum.Year <= 1976) || (Year_selection == '1980-2004' && datum.Year >= 1980 && datum.Year <= 2004) || (Year_selection == '2008-2021' && datum.Year >= 2008 && datum.Year <= 2021)"
+      }
+    ]
+  }
+  

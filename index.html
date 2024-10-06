@@ -8,33 +8,91 @@
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-</head>
-<body>
-
-
-  <div id="map"></div>
-
-  <script type="text/javascript">
-    const jsonFilePath = 'map.json'
-
-    vegaEmbed('#map', jsonFilePath).catch(console.error);
-  </script>
-
-</body>
-</html>
-
-<style>
+  
+  <style>
     body {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      justify-content: flex-start;
       align-items: center;
       height: 100vh;
       margin: 0;
       background-color: #f0f0f0;
     }
-    #map {
-      width: 90%;
-      max-width: 1200px;
-      height: auto;
+
+    h1 {
+      margin-bottom: 20px;
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 80%;
+      margin-bottom: 20px;
+    }
+
+    .left-content {
+      width: 45%;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+    }
+
+    .right-content {
+      width: 50%;
+    }
+
+    .map-container {
+      width: 80%;
+      margin-top: 20px;
     }
   </style>
+</head>
+<body>
+
+  <!-- Header Title -->
+  <h1>Olympics Visualization 2 by Terry Truong</h1>
+
+  <!-- Main container with left text and right chart -->
+  <div class="container">
+    
+    <!-- Left-hand text -->
+    <div class="left-content">
+      <p>The Summer Olympics has been one of the most significant sporting events globally, with an increasing number of participating countries over the years. This visualization shows the number of countries that participated in each Summer Olympics, starting from 1896 to 2021. The steady increase demonstrates the growing global inclusivity and popularity of the games. Explore the chart on the right to see how participation has evolved over time.</p>
+    </div>
+
+    <!-- Right-hand chart -->
+    <div class="right-content" id="participatingCountries"></div>
+
+  </div>
+
+  <!-- Map placed under the text -->
+  <div class="map-container" id="map"></div>
+
+  <script type="text/javascript">
+    // Fetch the Vega-Lite spec for participating countries chart from the JSON file
+    fetch('participatingCountries.json')
+      .then(response => response.json())
+      .then(spec => {
+        // Embed the participating countries chart
+        vegaEmbed('#participatingCountries', spec).then(result => {
+          // Handle the result if needed
+        }).catch(console.error);
+      });
+
+    // Fetch the Vega-Lite spec for the map from the JSON file
+    fetch('map.json')
+      .then(response => response.json())
+      .then(spec => {
+        // Embed the map visualization
+        vegaEmbed('#map', spec).then(result => {
+          // Handle the result if needed
+        }).catch(console.error);
+      });
+  </script>
+
+</body>
+</html>
