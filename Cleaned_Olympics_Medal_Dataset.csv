@@ -1,0 +1,40 @@
+,Code,Country,Total_Medals,Gold_Medals,Silver_Medals,Bronze_Medals,Athletes
+0,ISO 3 Code,Name,Total Medals,Gold Medals,Silver Medals,Bronce Medals,Athletes
+1,,World,307,103,102,102,2913
+2,,North America,52,20,16,16,469
+3,,Central America and the Caribbean,0,0,0,0,8
+4,,South America,0,0,0,0,23
+5,,Europe,193,71,59,63,1686
+6,,Africa,0,0,0,0,11
+7,,Asia,57,12,25,20,634
+8,,South-East Asia and Oceania,5,0,2,3,82
+10,AUT,Austria,14,5,3,6,105
+11,BEL,Belgium,1,0,1,0,22
+12,CHE,Switzerland,15,5,6,4,169
+13,DEU,Germany,31,14,10,7,156
+14,FRA,France,15,5,4,6,108
+15,LIE,Liechtenstein,1,0,0,1,3
+18,NLD,Netherlands,20,8,6,6,33
+22,FIN,Finland,6,1,1,4,106
+24,GBR,United Kingdom,5,1,0,4,58
+32,LVA,Latvia,1,0,0,1,34
+33,NOR,Norway,39,14,14,11,109
+34,SWE,Sweden,14,7,6,1,116
+36,BLR,Belarus,3,2,1,0,33
+37,CZE,Czech Republic,7,2,2,3,95
+38,HUN,Hungary,1,1,0,0,19
+40,POL,Poland,2,1,0,1,62
+42,SVK,Slovakia,3,1,2,0,56
+43,UKR,Ukraine,1,1,0,0,33
+47,ESP,Spain,2,0,0,2,13
+51,ITA,Italy,10,3,2,5,122
+59,SVN,Slovenia,2,0,1,1,71
+139,RUS,Russia,17,2,6,9,168
+140,CHN,China,9,1,6,2,81
+142,JPN,Japan,13,4,5,4,124
+143,KOR,South Korea,17,5,8,4,145
+157,KAZ,Kazakhstan,1,0,0,1,46
+199,AUS,Australia,3,0,2,1,51
+200,NZL,New Zealand,2,0,0,2,21
+239,CAN,Canada,29,11,8,10,226
+241,USA,United States of America,23,9,8,6,242
