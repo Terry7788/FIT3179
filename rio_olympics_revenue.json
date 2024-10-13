@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/Terry7788/FIT3179/refs/heads/main/cleaned_rio_2016_olympic_revenue.csv"
+    },
+    "mark": "arc",
+    "encoding": {
+      "theta": {
+        "field": "Percentage",
+        "type": "quantitative",
+        "title": "Percentage of Revenue"
+      },
+      "color": {
+        "field": "Revenue Source",
+        "type": "nominal",
+        "title": "Revenue Source"
+      },
+      "tooltip": [
+        {"field": "Revenue Source", "type": "nominal"},
+        {"field": "Percentage", "type": "quantitative", "format": ".1f"}
+      ]
+    },
+    "view": {
+      "stroke": null
+    },
+    "title": "Share of Rio 2016 Olympics Organizing Committee Revenue"
+  }
+  

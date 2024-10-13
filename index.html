@@ -90,6 +90,9 @@
     <p>This chart visualizes the distribution of male and female athletes at the Summer Olympics from 1896 to 2024. It highlights the historical changes in gender participation, showing the growing number of female athletes over the years as the games have become more inclusive.</p>
   </div>
 
+  <!-- Rio Olympics revenue chart -->
+  <div class="chart-container" id="rioOlympicsRevenue"></div>
+
   <!-- Map placed under the text -->
   <div class="map-container" id="map"></div>
 
@@ -112,6 +115,15 @@
         }).catch(console.error);
       });
 
+    // Embed the Rio Olympics revenue chart
+    fetch('rio_olympics_revenue.json')
+      .then(response => response.json())
+      .then(spec => {
+        vegaEmbed('#rioOlympicsRevenue', spec).then(result => {
+          // Handle the result if needed
+        }).catch(console.error);
+      });
+
     // Embed the map visualization
     fetch('map.json')
       .then(response => response.json())
@@ -124,3 +136,4 @@
 
 </body>
 </html>
+
