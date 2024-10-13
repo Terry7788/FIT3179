@@ -45,9 +45,22 @@
       width: 50%;
     }
 
+    .chart-container {
+      width: 80%;
+      margin-bottom: 20px;
+    }
+
     .map-container {
       width: 80%;
       margin-top: 20px;
+    }
+
+    .chart-description {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      margin-bottom: 20px;
+      text-align: center;
+      width: 80%;
     }
   </style>
 </head>
@@ -69,25 +82,40 @@
 
   </div>
 
+  <!-- Olympic gender distribution chart -->
+  <div class="chart-container" id="genderDistribution"></div>
+
+  <!-- Description under the gender distribution chart -->
+  <div class="chart-description">
+    <p>This chart visualizes the distribution of male and female athletes at the Summer Olympics from 1896 to 2024. It highlights the historical changes in gender participation, showing the growing number of female athletes over the years as the games have become more inclusive.</p>
+  </div>
+
   <!-- Map placed under the text -->
   <div class="map-container" id="map"></div>
 
   <script type="text/javascript">
-    // Fetch the Vega-Lite spec for participating countries chart from the JSON file
+    // Embed the participating countries chart
     fetch('participatingCountries.json')
       .then(response => response.json())
       .then(spec => {
-        // Embed the participating countries chart
         vegaEmbed('#participatingCountries', spec).then(result => {
           // Handle the result if needed
         }).catch(console.error);
       });
 
-    // Fetch the Vega-Lite spec for the map from the JSON file
+    // Embed the Olympic gender distribution chart
+    fetch('olympic_gender_distrubution.json')
+      .then(response => response.json())
+      .then(spec => {
+        vegaEmbed('#genderDistribution', spec).then(result => {
+          // Handle the result if needed
+        }).catch(console.error);
+      });
+
+    // Embed the map visualization
     fetch('map.json')
       .then(response => response.json())
       .then(spec => {
-        // Embed the map visualization
         vegaEmbed('#map', spec).then(result => {
           // Handle the result if needed
         }).catch(console.error);

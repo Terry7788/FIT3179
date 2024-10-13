@@ -1,0 +1,39 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/Terry7788/FIT3179/refs/heads/main/cleaned_olympic_gender_distribution.csv"
+    },
+    "transform": [
+      {
+        "fold": ["Male (%)", "Female (%)"],
+        "as": ["Gender", "Percentage"]
+      }
+    ],
+    "width": 1000,
+    "mark": "bar",
+    "encoding": {
+      "y": {
+        "field": "Year",
+        "type": "ordinal",
+        "title": "Olympic Year",
+        "axis": {"labelAngle": 0}
+      },
+      "x": {
+        "field": "Percentage",
+        "type": "quantitative",
+        "title": "Percentage of Athletes"
+      },
+      "color": {
+        "field": "Gender",
+        "type": "nominal",
+        "title": "Gender",
+        "sort": ["Male (%)", "Female (%)"]
+      },
+      "tooltip": [
+        {"field": "Year", "type": "ordinal", "title": "Olympic Year"},
+        {"field": "Gender", "type": "nominal", "title": "Gender"},
+        {"field": "Percentage", "type": "quantitative", "title": "Percentage", "format": ".1f"}
+      ]
+    },
+    "title": "Distribution of Male and Female Athletes at the Summer Olympics (1896-2024)"
+  }
