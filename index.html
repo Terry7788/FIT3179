@@ -176,7 +176,7 @@
   </div>
   <div class="center-container">
     <div class="center-content">
-      <h2 class="reward-heading">What's the Purpose?</h2>
+      <h2 class="reward-heading">The Difference in Schooling</h2>
       <p>
         This chart illustrates the number of government and non-government schools across Australia's states and territories in 2023. It highlights the distribution of schools in each region, allowing us to understand the balance between public and private education systems. Government schools are publicly funded and aim to provide education to all students, while non-government schools include private and independent institutions, often offering alternative curriculums or specialized teaching. Explore the chart to see how these types of schools compare across different states.
       </p>
@@ -188,28 +188,14 @@
 
   <div class="center-container">
     <div class="center-content">
-      <h2 class="reward-heading">The Athletes</h2>
+      <h2 class="reward-heading">Enrollment Trends</h2>
       <p>
-        Many different types of athletes train countless hours and most their whole lives to be able to represent themselves and their country in their given
-        sport. Initially in early years, mainly men competed in the olympics however in recent games, the percentage split between men and women
-        have become more even, with the latest olympic games paris 2024 containing a 50:50 split between females and males.
+        Across different stages of life, individuals make significant decisions about pursuing education, which is often influenced by factors like age and gender. Historically, there have been noticeable differences in the enrollment rates of males and females, but in recent years, the gap has narrowed in several age groups. For instance, educational enrollment data from 2023 reveals a closer alignment between male and female participation, reflecting broader shifts in societal attitudes towards education and gender equality.
       </p>
     </div>
   </div>
-  <div class="chart-container" id="genderDistribution"></div>
-
-
-  <div class="center-container">
-    <div class="center-content">
-      <h2 class="reward-heading">Why Do We Have The Games?</h2>
-      <p>
-        Not only is the olympic games a great way to celebrate the achievements of athletes. It is also great in uniting the world together.
-        However, due to the large viewership the olympic games obtains, this becomes a perfect opportunity for sponsors and brands to capitalize on.
-        A big upside of the olympic games is the large revenue gained by televising the games. 
-      </p>
-    </div>
-  </div>
-  <!-- Rio Olympics revenue chart -->
+  
+  <div class="chart-container" id="enrolmentByAgeGroup"></div>
   <div class="container">
     <div class="revenue-left-content" >
       <p>
@@ -224,6 +210,20 @@
     <div class="revenue-right-content " id="rioOlympicsRevenue"></div>
 
   </div>
+
+
+  <div class="center-container">
+    <div class="center-content">
+      <h2 class="reward-heading">Why Do We Have The Games?</h2>
+      <p>
+        Not only is the olympic games a great way to celebrate the achievements of athletes. It is also great in uniting the world together.
+        However, due to the large viewership the olympic games obtains, this becomes a perfect opportunity for sponsors and brands to capitalize on.
+        A big upside of the olympic games is the large revenue gained by televising the games. 
+      </p>
+    </div>
+  </div>
+  <!-- Rio Olympics revenue chart -->
+
   
 
   <!-- Host broadcast feed hours chart -->
@@ -250,11 +250,11 @@
         }).catch(console.error);
       });
 
-    // Embed the Rio Olympics revenue chart
-    fetch('rio_olympics_revenue.json')
+    // Embed the enrolmentByAgeGroup Chart
+    fetch('enrolmentByAgeGroup.json')
       .then(response => response.json())
       .then(spec => {
-        vegaEmbed('#rioOlympicsRevenue', spec).then(result => {
+        vegaEmbed('#enrolmentByAgeGroup', spec).then(result => {
           // Handle the result if needed
         }).catch(console.error);
       });
