@@ -28,85 +28,83 @@
       color: #333;
       text-align: center;
       margin-top: 30px;
-
     }
-     p {
+    
+    p {
       font-size: 18px;
       line-height: 1.6;
       color: #555;
     }
 
-
     .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch; /* Ensures both left and right content have the same height */
-  width: 80%;
-  max-width: 1200px;
-  margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch; /* Ensures both left and right content have the same height */
+      width: 80%;
+      max-width: 1200px;
+      margin-top: 40px;
+    }
 
-}
     .center-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 1900px;
-
-
-  }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 1900px;
+    }
 
     .center-content {
-    width: 60%;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
+      width: 60%;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
 
-  .reward-heading {
-    font-size: 2em;
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
+    .reward-heading {
+      font-size: 2em;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
 
-  .left-content {
-  width: 35%;
-  height: 485px;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.revenue-left-content {
-  width: 45%;
-  height: 300px;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.revenue-right-content {
-  width: 50%;
+    .left-content {
+      width: 35%;
+      height: 485px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  display: flex;
-  align-items: center; /* Ensures content inside is centered vertically */
-}
+    .revenue-left-content {
+      width: 45%;
+      height: 300px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .revenue-right-content {
+      width: 50%;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      display: flex;
+      align-items: center; /* Ensures content inside is centered vertically */
+    }
 
     .right-content {
-  width: 60%;
-  margin-bottom: 40px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  display: flex;
-  align-items: center; /* Ensures content inside is centered vertically */
-}
+      width: 60%;
+      margin-bottom: 40px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      display: flex;
+      align-items: center; /* Ensures content inside is centered vertically */
+    }
 
     .chart-container {
       width: 80%;
@@ -153,27 +151,41 @@
         width: 90%;
       }
     }
+    
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 80%;
+
+      margin-bottom: 30px;
+    }
+    
+    .footer-line {
+      width: 80%;
+      border-top: 2px solid #ccc;
+
+    }
   </style>
 </head>
 <body>
 
   <!-- Header Title -->
-  <h1>Education in Australia by Terry Truong</h1>
+  <h1>Education in Australia</h1>
 
   <!-- Main container with left text and right chart -->
   <div class="container">
     
     <!-- Left-hand text -->
     <div class="left-content">
-      <p>This map displays the distribution of schools across Australia in 2023, offering a detailed look at the number of schools in each state and territory. The variation highlights differences in education infrastructure across regions, with more densely populated states such as New South Wales and Victoria having the most schools. Northern Territory, in contrast, has far fewer schools, reflecting its smaller population. Explore the map on the right to understand the educational landscape across Australia’s vast regions.</p>
+      <p><strong>Education in Australia</strong> is extremely important in terms of the nation's social and economic development. Australia offers a <strong>diverse and inclusive education system</strong>, from early childhood education through to tertiary studies. Australia's education system is renowned for its <strong>high standards</strong> and <strong>world-class institutions</strong>, attracting both domestic and international students. Australia promotes <strong>equal access to education</strong> across its states and territories, with public and private institutions providing a range of opportunities. Despite regional differences in population and infrastructure, Australia remains committed to delivering <strong>quality education</strong> to all students, ensuring <strong>lifelong learning</strong> and <strong>skill development</strong>.</p>
     </div>
     
-
     <!-- Right-hand chart -->
     <div class="right-content" id="australiaSchoolsMap"></div>
 
-
   </div>
+  
   <div class="center-container">
     <div class="center-content">
       <h2 class="reward-heading">The Difference in Schooling</h2>
@@ -190,13 +202,19 @@
     <div class="center-content">
       <h2 class="reward-heading">Enrollment Trends</h2>
       <p>
-        Across different stages of life, individuals make significant decisions about pursuing education, which is often influenced by factors like age and gender. Historically, there have been noticeable differences in the enrollment rates of males and females, but in recent years, the gap has narrowed in several age groups. For instance, educational enrollment data from 2023 reveals a closer alignment between male and female participation, reflecting broader shifts in societal attitudes towards education and gender equality.
+        Across different stages of life, individuals make significant decisions about pursuing education, which is often influenced by factors like <strong>age</strong> and <strong>gender</strong>. Historically, there have been noticeable differences in the enrollment rates of <strong>males</strong> and <strong>females</strong>, but in recent years, the gap has narrowed in several age groups. For instance, educational enrollment data from <strong>2023</strong> reveals a closer alignment between male and female participation, reflecting broader shifts in societal attitudes towards <strong>education</strong> and <strong>gender equality</strong>.
       </p>
     </div>
   </div>
   
   <div class="chart-container" id="enrolmentByAgeGroup"></div>
-
+  
+  <div class="center-container">
+    <div class="center-content">
+      <h2 class="reward-heading">So, Why is Education So Important?</h2>
+    </div>
+  </div>
+  
   <div class="container">
     <div class="left-content">
       <p>
@@ -206,23 +224,25 @@
     <div class="right-content" id="averageEarnings"></div>
   </div>
   
-
   <div class="center-container">
     <div class="center-content">
-      <h2 class="reward-heading">Why Do We Have The Games?</h2>
+      <h2 class="reward-heading">What are People Studying?</h2>
       <p>
-        Not only is the olympic games a great way to celebrate the achievements of athletes. It is also great in uniting the world together.
-        However, due to the large viewership the olympic games obtains, this becomes a perfect opportunity for sponsors and brands to capitalize on.
-        A big upside of the olympic games is the large revenue gained by televising the games. 
+        This chart illustrates the distribution of <strong>male</strong> and <strong>female</strong> students across various fields of study, highlighting the significance of <strong>education</strong> in securing <strong>employment</strong>. Pursuing a university degree equips individuals with essential <strong>skills</strong> and <strong>knowledge</strong>, making them more competitive in the <strong>job market</strong>. Different fields of study cater to diverse <strong>career paths</strong>, with some areas experiencing higher demand for qualified professionals. Understanding these trends is crucial for fostering educational diversity and addressing <strong>gender imbalances</strong>, ultimately preparing students for successful careers in a rapidly evolving <strong>workforce</strong>.
       </p>
     </div>
   </div>
-  <!-- Rio Olympics revenue chart -->
-
   
-
   <!-- Host broadcast feed hours chart -->
-  <div class="chart-container" id="hostBroadcast"></div>
+  <div class="chart-container" id="maleAndFemaleFields"></div>
+
+  <div class="footer-line"></div>
+  
+  <div class="footer">
+    <p>Published by Terry Thao Manh Truong FIT5032 Data Visualization 2</p>
+    <p style="font-style: italic;">Artificial intelligence has been used for text generation.</p>
+    <p>Sources: <span>abs.gov.au</span>  <span>https://www.statista.com/</span></p>
+  </div>
 
 
 
@@ -263,11 +283,11 @@
         }).catch(console.error);
       });
 
-    // Embed the new map visualization (Olympic Medal Count)
-    fetch('olympic_map_medalCount.json')
+    // Embed the maleAndFemaleFields chart
+    fetch('maleAndFemaleFields.json')
       .then(response => response.json())
       .then(spec => {
-        vegaEmbed('#map', spec).then(result => {
+        vegaEmbed('#maleAndFemaleFields', spec).then(result => {
           // Handle the result if needed
         }).catch(console.error);
       });

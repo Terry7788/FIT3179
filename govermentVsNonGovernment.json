@@ -11,9 +11,31 @@
     },
     "width": 870,
     "height": 400,
+    "params": [
+      {
+        "name": "selectedSchoolType",
+        "value": "Government",
+        "bind": {
+          "input": "select",
+          "options": [
+            "Government",
+            "Non-government"
+          ],
+          "name": "Select School Type: "
+        }
+      }
+    ],
     "transform": [
-      {"filter": "datum.State != 'Australia'"},
-      {"fold": ["Government", "Non-government"], "as": ["School Type", "Number of Schools"]}
+      {
+        "filter": "datum.State != 'Australia'"
+      },
+      {
+        "fold": ["Government", "Non-government"],
+        "as": ["School Type", "Number of Schools"]
+      },
+      {
+        "filter": "datum['School Type'] === selectedSchoolType"
+      }
     ],
     "mark": "bar",
     "encoding": {
@@ -36,7 +58,7 @@
       "color": {
         "field": "School Type",
         "type": "nominal",
-        "scale": {"range": ["#1f77b4", "#ff7f0e"]},
+        "scale": {"range": ["#f78269", "#0000FF"]},  
         "title": "School Type"
       },
       "tooltip": [
@@ -49,5 +71,4 @@
       "axis": {"grid": false}
     }
   }
-  
   

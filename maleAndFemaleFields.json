@@ -1,0 +1,50 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Stacked Horizontal Bar Chart of Male and Female Students by Field of Study",
+    "title": {
+      "text": "Male and Female Students by Field of Study",
+      "anchor": "middle",
+      "fontSize": 16
+    },
+    "width": 850,
+    "height": 400,
+    "data": {
+      "url": "https://raw.githubusercontent.com/Terry7788/FIT3179/refs/heads/main/Data/updated_field_of_study_data.csv"
+    },
+    "transform": [
+      {
+        "fold": ["Males (%)", "Females (%)"],
+        "as": ["Gender", "Percentage"]
+      }
+    ],
+    "mark": {
+      "type": "bar"
+    },
+    "encoding": {
+      "y": {
+        "field": "Field of Study",
+        "type": "nominal",
+        "axis": {"title": "Field of Study"}
+      },
+      "x": {
+        "field": "Percentage",
+        "type": "quantitative",
+        "axis": {"title": "Percentage"}
+      },
+      "color": {
+        "field": "Gender",
+        "type": "nominal",
+        "scale": {
+          "range": ["#FFB6C1", "#8B4513"]
+          
+        },
+        "legend": {"title": "Gender"}
+      },
+      "tooltip": [
+        {"field": "Field of Study", "type": "nominal", "title": "Field of Study"},
+        {"field": "Gender", "type": "nominal", "title": "Gender"},
+        {"field": "Percentage", "type": "quantitative", "title": "Percentage"}
+      ]
+    }
+  }
+  

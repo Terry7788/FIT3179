@@ -17,34 +17,58 @@
         "as": ["Sex", "Percentage"]
       }
     ],
-    "mark": {
-      "type": "line",
-      "point": {
-        "filled": true,
-        "size": 100
+    "layer": [
+      {
+        "mark": {
+          "type": "line",
+          "point": {
+            "filled": true,
+            "size": 100
+          }
+        },
+        "encoding": {
+          "x": {
+            "field": "Age Group",
+            "type": "ordinal",
+            "axis": {"title": "Age Group", "labelAngle": 0}
+          },
+          "y": {
+            "field": "Percentage",
+            "type": "quantitative",
+            "axis": {"title": "Enrollment Percentage"}
+          },
+          "color": {
+            "field": "Sex",
+            "type": "nominal",
+            "scale": {
+              "domain": ["Male (%)", "Female (%)"],
+              "range": ["#8B4513", "#FFB6C1"]  
+            },
+            "legend": {"title": "Sex"}
+          },
+          "tooltip": [
+            {"field": "Age Group", "type": "ordinal", "title": "Age Group"},
+            {"field": "Sex", "type": "nominal", "title": "Sex"},
+            {"field": "Percentage", "type": "quantitative", "title": "Enrollment Percentage"}
+          ]
+        }
+      },
+      {
+        "mark": {"type": "text", "fontSize": 12, "fill": "black"},
+        "encoding": {
+          "x": {"value": 455},
+          "y": {"value": 255},
+          "text": {"value": "After age 29, the rate of enrollment in study declines drastically!"}
+        }
+      },
+      {
+        "mark": {"type": "rule", "color": "black", "strokeWidth": 1},
+        "encoding": {
+          "x": {"value": 455},
+          "x2": {"value": 280},
+          "y": {"value": 270},
+          "y2": {"value": 325}
+        }
       }
-    },
-    "encoding": {
-      "x": {
-        "field": "Age Group",
-        "type": "ordinal",
-        "axis": {"title": "Age Group", "labelAngle": 0}
-      },
-      "y": {
-        "field": "Percentage",
-        "type": "quantitative",
-        "axis": {"title": "Enrollment Percentage"}
-      },
-      "color": {
-        "field": "Sex",
-        "type": "nominal",
-        "legend": {"title": "Sex"}
-      },
-      "tooltip": [
-        {"field": "Age Group", "type": "ordinal", "title": "Age Group"},
-        {"field": "Sex", "type": "nominal", "title": "Sex"},
-        {"field": "Percentage", "type": "quantitative", "title": "Enrollment Percentage"}
-      ]
-    }
+    ]
   }
-  
