@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Olympic Medal Count by Country</title>
+  <title>Education in Australia</title>
   <!-- Include Vega, Vega-Lite, and Vega-Embed -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
@@ -28,34 +28,85 @@
       color: #333;
       text-align: center;
       margin-top: 30px;
-      margin-bottom: 40px;
-    }
 
-    .container {
-      display: flex;
-      justify-content: space-between;
-      width: 80%;
-      max-width: 1200px;
-      margin-bottom: 40px;
     }
-
-    .left-content {
-      width: 45%;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .left-content p {
+     p {
       font-size: 18px;
       line-height: 1.6;
       color: #555;
     }
 
+
+    .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* Ensures both left and right content have the same height */
+  width: 80%;
+  max-width: 1200px;
+  margin-top: 40px;
+
+}
+    .center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1900px;
+
+
+  }
+
+    .center-content {
+    width: 60%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .reward-heading {
+    font-size: 2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  .left-content {
+  width: 45%;
+  height: 485px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.revenue-left-content {
+  width: 45%;
+  height: 300px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.revenue-right-content {
+  width: 50%;
+
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  align-items: center; /* Ensures content inside is centered vertically */
+}
+
     .right-content {
-      width: 50%;
-    }
+  width: 50%;
+  margin-bottom: 40px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  align-items: center; /* Ensures content inside is centered vertically */
+}
 
     .chart-container {
       width: 80%;
@@ -64,6 +115,7 @@
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       padding: 20px;
+      margin-top: 40px;
     }
 
     .chart-description {
@@ -77,6 +129,7 @@
     .map-container {
       width: 80%;
       margin-top: 40px;
+      margin-bottom: 40px;
       background-color: #fff;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -105,7 +158,7 @@
 <body>
 
   <!-- Header Title -->
-  <h1>Olympics Visualization by Terry Truong</h1>
+  <h1>Education in Australia by Terry Truong</h1>
 
   <!-- Main container with left text and right chart -->
   <div class="container">
@@ -118,23 +171,60 @@
     <!-- Right-hand chart -->
     <div class="right-content" id="participatingCountries"></div>
 
+
+  </div>
+  <div class="center-container">
+    <div class="center-content">
+      <h2 class="reward-heading">What's the Purpose?</h2>
+      <p>
+        Every 4 years, athletes from across the world represent their countries in different sports in order to potentially earn a medal for their country.
+        Earning a medal is an extremely prestigious title that many athletes can only dream of achieving. A medal signifies that the athlete are "one of the best"
+        in the sport.
+      </p>
+    </div>
   </div>
   <!-- Map placed under the text -->
   <div class="map-container" id="map"></div>
-  <!-- Olympic gender distribution chart -->
-    <!-- Description under the gender distribution chart -->
-    <div class="chart-description">
-      <p>This chart visualizes the distribution of male and female athletes at the Summer Olympics from 1896 to 2024. It highlights the growing number of female athletes over the years as the games have become more inclusive.</p>
+
+  <div class="center-container">
+    <div class="center-content">
+      <h2 class="reward-heading">The Athletes</h2>
+      <p>
+        Many different types of athletes train countless hours and most their whole lives to be able to represent themselves and their country in their given
+        sport. Initially in early years, mainly men competed in the olympics however in recent games, the percentage split between men and women
+        have become more even, with the latest olympic games paris 2024 containing a 50:50 split between females and males.
+      </p>
     </div>
+  </div>
   <div class="chart-container" id="genderDistribution"></div>
 
-  <!-- Description under the gender distribution chart -->
-  <div class="chart-description">
-    <p>This chart visualizes the distribution of male and female athletes at the Summer Olympics from 1896 to 2024. It highlights the growing number of female athletes over the years as the games have become more inclusive.</p>
-  </div>
 
+  <div class="center-container">
+    <div class="center-content">
+      <h2 class="reward-heading">Why Do We Have The Games?</h2>
+      <p>
+        Not only is the olympic games a great way to celebrate the achievements of athletes. It is also great in uniting the world together.
+        However, due to the large viewership the olympic games obtains, this becomes a perfect opportunity for sponsors and brands to capitalize on.
+        A big upside of the olympic games is the large revenue gained by televising the games. 
+      </p>
+    </div>
+  </div>
   <!-- Rio Olympics revenue chart -->
-  <div class="chart-container" id="rioOlympicsRevenue"></div>
+  <div class="container">
+    <div class="revenue-left-content" >
+      <p>
+        Around 40% of the revenue source of the 2016 olympic games is contributed by the Local Sponsors.
+
+
+
+      </p>
+
+
+    </div>
+    <div class="revenue-right-content " id="rioOlympicsRevenue"></div>
+
+  </div>
+  
 
   <!-- Host broadcast feed hours chart -->
   <div class="chart-container" id="hostBroadcast"></div>

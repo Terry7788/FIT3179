@@ -6,6 +6,8 @@
       "anchor": "start",
       "fontSize": 16
     },
+    "width": 450,  
+    "height": 400, 
     "data": {
       "url": "https://raw.githubusercontent.com/Terry7788/FIT3179/refs/heads/main/cleaned_olympics_participation.csv",
       "format": {"type": "csv"}

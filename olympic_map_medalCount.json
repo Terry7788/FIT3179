@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Olympic Medals by Country",
+    "title": "2024 Olympic Medals by Country",
     "width": 1000,
     "height": 600,
     "projection": {"type": "equalEarth"},
