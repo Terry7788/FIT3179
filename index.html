@@ -119,8 +119,13 @@
     <div class="right-content" id="participatingCountries"></div>
 
   </div>
-
+  <!-- Map placed under the text -->
+  <div class="map-container" id="map"></div>
   <!-- Olympic gender distribution chart -->
+    <!-- Description under the gender distribution chart -->
+    <div class="chart-description">
+      <p>This chart visualizes the distribution of male and female athletes at the Summer Olympics from 1896 to 2024. It highlights the growing number of female athletes over the years as the games have become more inclusive.</p>
+    </div>
   <div class="chart-container" id="genderDistribution"></div>
 
   <!-- Description under the gender distribution chart -->
@@ -134,8 +139,7 @@
   <!-- Host broadcast feed hours chart -->
   <div class="chart-container" id="hostBroadcast"></div>
 
-  <!-- Map placed under the text -->
-  <div class="map-container" id="map"></div>
+
 
   <script type="text/javascript">
     // Embed the participating countries chart
@@ -174,8 +178,8 @@
         }).catch(console.error);
       });
 
-    // Embed the map visualization
-    fetch('map.json')
+    // Embed the new map visualization (Olympic Medal Count)
+    fetch('olympic_map_medalCount.json')
       .then(response => response.json())
       .then(spec => {
         vegaEmbed('#map', spec).then(result => {

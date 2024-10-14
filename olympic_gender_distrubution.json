@@ -9,7 +9,7 @@
         "as": ["Gender", "Percentage"]
       }
     ],
-    "width": 1000,
+    "width": 800,
     "mark": "bar",
     "encoding": {
       "y": {
