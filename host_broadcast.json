@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/Terry7788/FIT3179/refs/heads/main/cleaned_olympic_host_broadcast_hours.csv"
+    },
+    "mark": "bar",
+    "width": 800,
+    "encoding": {
+      "x": {
+        "field": "Year",
+        "type": "nominal",
+        "title": "Olympic Year",
+        "axis": {
+          "labelAngle": 0,
+          "labelPadding": 10
+        }
+      },
+      "y": {
+        "field": "Broadcast Hours",
+        "type": "quantitative",
+        "title": "Total Broadcast Hours"
+      },
+      "tooltip": [
+        {"field": "Year", "type": "nominal", "title": "Olympic Year"},
+        {"field": "Broadcast Hours", "type": "quantitative", "title": "Total Broadcast Hours"}
+      ]
+    },
+    "title": "Total Number of Host Broadcast Feed Hours for Olympic Summer Games (1988-2020)"
+  }
+  

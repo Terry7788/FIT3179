@@ -13,32 +13,44 @@
     body {
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
       align-items: center;
-      height: 100vh;
+      background-color: #f4f4f9;
+      color: #333;
       margin: 0;
-      background-color: #f0f0f0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
     }
 
     h1 {
-      margin-bottom: 20px;
-      font-family: Arial, sans-serif;
-      font-size: 24px;
+      font-family: 'Arial', sans-serif;
+      font-size: 36px;
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 40px;
     }
 
     .container {
       display: flex;
-      flex-direction: row;
       justify-content: space-between;
       width: 80%;
-      margin-bottom: 20px;
+      max-width: 1200px;
+      margin-bottom: 40px;
     }
 
     .left-content {
       width: 45%;
       padding: 20px;
-      font-family: Arial, sans-serif;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .left-content p {
       font-size: 18px;
+      line-height: 1.6;
+      color: #555;
     }
 
     .right-content {
@@ -47,34 +59,60 @@
 
     .chart-container {
       width: 80%;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    .chart-description {
+      font-size: 16px;
+      text-align: center;
+      width: 80%;
+      margin-top: 20px;
+      color: #666;
     }
 
     .map-container {
       width: 80%;
-      margin-top: 20px;
+      margin-top: 40px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
     }
 
-    .chart-description {
-      font-family: Arial, sans-serif;
-      font-size: 16px;
-      margin-bottom: 20px;
-      text-align: center;
-      width: 80%;
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .left-content,
+      .right-content {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .chart-container,
+      .map-container {
+        width: 90%;
+      }
     }
   </style>
 </head>
 <body>
 
   <!-- Header Title -->
-  <h1>Olympics Visualization 2 by Terry Truong</h1>
+  <h1>Olympics Visualization by Terry Truong</h1>
 
   <!-- Main container with left text and right chart -->
   <div class="container">
     
     <!-- Left-hand text -->
     <div class="left-content">
-      <p>The Summer Olympics has been one of the most significant sporting events globally, with an increasing number of participating countries over the years. This visualization shows the number of countries that participated in each Summer Olympics, starting from 1896 to 2021. The steady increase demonstrates the growing global inclusivity and popularity of the games. Explore the chart on the right to see how participation has evolved over time.</p>
+      <p>The Summer Olympics is one of the most significant sporting events globally, with an increasing number of participating countries over the years. This visualization shows the number of countries that participated in each Summer Olympics, from 1896 to 2021. The steady increase demonstrates the growing global inclusivity and popularity of the games. Explore the chart on the right to see how participation has evolved over time.</p>
     </div>
 
     <!-- Right-hand chart -->
@@ -87,11 +125,14 @@
 
   <!-- Description under the gender distribution chart -->
   <div class="chart-description">
-    <p>This chart visualizes the distribution of male and female athletes at the Summer Olympics from 1896 to 2024. It highlights the historical changes in gender participation, showing the growing number of female athletes over the years as the games have become more inclusive.</p>
+    <p>This chart visualizes the distribution of male and female athletes at the Summer Olympics from 1896 to 2024. It highlights the growing number of female athletes over the years as the games have become more inclusive.</p>
   </div>
 
   <!-- Rio Olympics revenue chart -->
   <div class="chart-container" id="rioOlympicsRevenue"></div>
+
+  <!-- Host broadcast feed hours chart -->
+  <div class="chart-container" id="hostBroadcast"></div>
 
   <!-- Map placed under the text -->
   <div class="map-container" id="map"></div>
@@ -124,6 +165,15 @@
         }).catch(console.error);
       });
 
+    // Embed the Host broadcast feed hours chart
+    fetch('host_broadcast.json')
+      .then(response => response.json())
+      .then(spec => {
+        vegaEmbed('#hostBroadcast', spec).then(result => {
+          // Handle the result if needed
+        }).catch(console.error);
+      });
+
     // Embed the map visualization
     fetch('map.json')
       .then(response => response.json())
@@ -136,4 +186,3 @@
 
 </body>
 </html>
-
