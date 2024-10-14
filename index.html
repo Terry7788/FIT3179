@@ -71,7 +71,7 @@
   }
 
   .left-content {
-  width: 45%;
+  width: 35%;
   height: 485px;
   padding: 20px;
   background-color: #fff;
@@ -98,7 +98,7 @@
 }
 
     .right-content {
-  width: 50%;
+  width: 60%;
   margin-bottom: 40px;
   background-color: #fff;
   border-radius: 8px;
@@ -165,11 +165,12 @@
     
     <!-- Left-hand text -->
     <div class="left-content">
-      <p>The Summer Olympics is one of the most significant sporting events globally, with an increasing number of participating countries over the years. This visualization shows the number of countries that participated in each Summer Olympics, from 1896 to 2021. The steady increase demonstrates the growing global inclusivity and popularity of the games. Explore the chart on the right to see how participation has evolved over time.</p>
+      <p>This map displays the distribution of schools across Australia in 2023, offering a detailed look at the number of schools in each state and territory. The variation highlights differences in education infrastructure across regions, with more densely populated states such as New South Wales and Victoria having the most schools. Northern Territory, in contrast, has far fewer schools, reflecting its smaller population. Explore the map on the right to understand the educational landscape across Australia’s vast regions.</p>
     </div>
+    
 
     <!-- Right-hand chart -->
-    <div class="right-content" id="participatingCountries"></div>
+    <div class="right-content" id="australiaSchoolsMap"></div>
 
 
   </div>
@@ -232,11 +233,11 @@
 
 
   <script type="text/javascript">
-    // Embed the participating countries chart
-    fetch('participatingCountries.json')
+    // Embed the Schools state map
+    fetch('australiaSchoolsMap.json')
       .then(response => response.json())
       .then(spec => {
-        vegaEmbed('#participatingCountries', spec).then(result => {
+        vegaEmbed('#australiaSchoolsMap', spec).then(result => {
           // Handle the result if needed
         }).catch(console.error);
       });

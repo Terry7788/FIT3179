@@ -1,0 +1,77 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "Distribution of Schools in Australia by State in 2023",
+      "fontSize": 20,
+      "offset": 15,
+      "dx": 75
+    },
+    "width": 450,
+    "height": 430,
+    "projection": {"type": "mercator"},
+    "data": {
+      "url": "https://raw.githubusercontent.com/Terry7788/FIT3179/refs/heads/main/Data/aus_states.topojson",
+      "format": {"type": "topojson", "feature": "georef-australia-state@public"}
+    },
+    "transform": [
+      {
+        "lookup": "properties.ste_name",
+        "from": {
+          "data": {
+            "url": "https://raw.githubusercontent.com/Terry7788/FIT3179/refs/heads/main/Data/Schools_in_Australia_by_State_2023.csv"
+          },
+          "key": "State",
+          "fields": ["Schools"]
+        }
+      }
+    ],
+    "layer": [
+      {
+        "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.5},
+        "encoding": {
+          "color": {
+            "field": "Schools",
+            "type": "quantitative",
+            "scale": {"scheme": "blues"},
+            "title": "Number of Schools"
+          },
+          "tooltip": [
+            {"field": "properties.ste_name", "title": "State"},
+            {
+              "field": "Schools",
+              "title": "Number of Schools",
+              "type": "quantitative",
+              "format": ".0f"
+            }
+          ]
+        }
+      },
+      {
+        "mark": {"type": "text", "fontSize": 12, "fill": "black"},
+        "encoding": {
+          "x": {"value": 30},
+          "y": {"value": 45},
+          "text": {"value": "Northern Territory has far fewer schools"}
+        }
+      },
+      {
+        "mark": {"type": "text", "fontSize": 12, "fill": "black"},
+        "encoding": {
+          "x": {"value": 30},
+          "y": {"value": 60},
+          "text": {"value": "compared to other states in Australia."}
+        }
+      },
+      {
+        "mark": {"type": "rule", "color": "black", "strokeWidth": 1},
+        "encoding": {
+          "x": {"value": 250},
+          "x2": {"value": 120},
+          "y": {"value": 180},
+          "y2": {"value": 70}
+        }
+      }
+    ],
+    "config": {"view": {"stroke": null}, "axis": {"grid": false}}
+  }
+  
