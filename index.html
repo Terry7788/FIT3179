@@ -178,14 +178,13 @@
     <div class="center-content">
       <h2 class="reward-heading">What's the Purpose?</h2>
       <p>
-        Every 4 years, athletes from across the world represent their countries in different sports in order to potentially earn a medal for their country.
-        Earning a medal is an extremely prestigious title that many athletes can only dream of achieving. A medal signifies that the athlete are "one of the best"
-        in the sport.
+        This chart illustrates the number of government and non-government schools across Australia's states and territories in 2023. It highlights the distribution of schools in each region, allowing us to understand the balance between public and private education systems. Government schools are publicly funded and aim to provide education to all students, while non-government schools include private and independent institutions, often offering alternative curriculums or specialized teaching. Explore the chart to see how these types of schools compare across different states.
       </p>
     </div>
   </div>
+  
   <!-- Map placed under the text -->
-  <div class="map-container" id="map"></div>
+  <div class="chart-container" id="govermentVsNonGovernment"></div>
 
   <div class="center-container">
     <div class="center-content">
@@ -242,11 +241,11 @@
         }).catch(console.error);
       });
 
-    // Embed the Olympic gender distribution chart
-    fetch('olympic_gender_distrubution.json')
+    // Embed the govermentVsNonGovernment chart
+    fetch('govermentVsNonGovernment.json')
       .then(response => response.json())
       .then(spec => {
-        vegaEmbed('#genderDistribution', spec).then(result => {
+        vegaEmbed('#govermentVsNonGovernment', spec).then(result => {
           // Handle the result if needed
         }).catch(console.error);
       });

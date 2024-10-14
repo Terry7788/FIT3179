@@ -1,0 +1,53 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "Number of Government and Non-government Schools in Australia (2023)",
+      "fontSize": 20,
+      "offset": 15
+    },
+    "data": {
+      "url": "https://raw.githubusercontent.com/Terry7788/FIT3179/refs/heads/main/Data/Number_of_government_and_non-government_schools_in_Australia_in_2023.csv",
+      "format": {"type": "csv"}
+    },
+    "width": 870,
+    "height": 400,
+    "transform": [
+      {"filter": "datum.State != 'Australia'"},
+      {"fold": ["Government", "Non-government"], "as": ["School Type", "Number of Schools"]}
+    ],
+    "mark": "bar",
+    "encoding": {
+      "y": {
+        "field": "State",
+        "type": "ordinal",
+        "axis": {"title": "State"},
+        "sort": "-x"
+      },
+      "yOffset": {
+        "field": "School Type",
+        "type": "nominal",
+        "title": "School Type"
+      },
+      "x": {
+        "field": "Number of Schools",
+        "type": "quantitative",
+        "axis": {"title": "Number of Schools"}
+      },
+      "color": {
+        "field": "School Type",
+        "type": "nominal",
+        "scale": {"range": ["#1f77b4", "#ff7f0e"]},
+        "title": "School Type"
+      },
+      "tooltip": [
+        {"field": "State", "title": "State"},
+        {"field": "School Type", "title": "School Type"},
+        {"field": "Number of Schools", "title": "Number of Schools", "type": "quantitative"}
+      ]
+    },
+    "config": {
+      "axis": {"grid": false}
+    }
+  }
+  
+  
