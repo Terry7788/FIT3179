@@ -7,7 +7,7 @@
       "dx": 75
     },
     "width": 450,
-    "height": 430,
+    "height": 435,
     "projection": {"type": "mercator"},
     "data": {
       "url": "https://raw.githubusercontent.com/Terry7788/FIT3179/refs/heads/main/Data/aus_states.topojson",

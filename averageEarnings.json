@@ -1,0 +1,60 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Lollipop Chart of Average Weekly Earnings by Educational Qualification with Custom Colors and Title",
+    "title": {
+      "text": "Average Weekly Earnings by Educational Qualification (2023)",
+      "anchor": "middle", 
+      "fontSize": 16
+    },
+    "width": 400,
+    "height": 420,
+    "data": {
+      "url": "https://raw.githubusercontent.com/Terry7788/FIT3179/refs/heads/main/Data/cleaned_earnings_data.csv"
+    },
+    "layer": [
+      {
+        "mark": {
+          "type": "rule",
+          "color": "#4CAF50",
+          "strokeWidth": 2
+        },
+        "encoding": {
+          "y": {
+            "field": "Educational Qualification",
+            "type": "nominal",
+            "axis": {"title": "Educational Qualification", "labelAngle": 0}
+          },
+          "x": {
+            "field": "Mean Weekly Earnings (AUD)",
+            "type": "quantitative",
+            "axis": {"title": "Mean Weekly Earnings (AUD)"}
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "point",
+          "filled": true,
+          "color": "#9C27B0", 
+          "size": 100
+        },
+        "encoding": {
+          "y": {
+            "field": "Educational Qualification",
+            "type": "nominal"
+          },
+          "x": {
+            "field": "Mean Weekly Earnings (AUD)",
+            "type": "quantitative"
+          },
+          "tooltip": [
+            {"field": "Educational Qualification", "type": "nominal"},
+            {"field": "Mean Weekly Earnings (AUD)", "type": "quantitative"}
+          ]
+        }
+      }
+    ]
+  }
+  
+  
+  

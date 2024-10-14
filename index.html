@@ -110,7 +110,7 @@
 
     .chart-container {
       width: 80%;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       background-color: #fff;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -196,21 +196,16 @@
   </div>
   
   <div class="chart-container" id="enrolmentByAgeGroup"></div>
+
   <div class="container">
-    <div class="revenue-left-content" >
+    <div class="left-content">
       <p>
-        Around 40% of the revenue source of the 2016 olympic games is contributed by the Local Sponsors.
-
-
-
+        Education plays a crucial role in shaping one's career opportunities and financial stability. Data consistently shows that individuals with <strong>higher levels of education</strong> tend to earn more on a weekly basis. Higher education, such as <strong>postgraduate degrees</strong> and <strong>advanced certifications</strong>, opens the door to <strong>higher-paying jobs</strong>, leading to increased financial security and opportunities for advancement. Investing in education can have a long-lasting impact on <strong>income potential</strong>, making it one of the most valuable investments an individual can make.
       </p>
-
-
     </div>
-    <div class="revenue-right-content " id="rioOlympicsRevenue"></div>
-
+    <div class="right-content" id="averageEarnings"></div>
   </div>
-
+  
 
   <div class="center-container">
     <div class="center-content">
@@ -259,11 +254,11 @@
         }).catch(console.error);
       });
 
-    // Embed the Host broadcast feed hours chart
-    fetch('host_broadcast.json')
+    // Embed the averageEarnings chart
+    fetch('averageEarnings.json')
       .then(response => response.json())
       .then(spec => {
-        vegaEmbed('#hostBroadcast', spec).then(result => {
+        vegaEmbed('#averageEarnings', spec).then(result => {
           // Handle the result if needed
         }).catch(console.error);
       });
